@@ -80,3 +80,13 @@ export const magenta: Color = Object.freeze({
     name: "magenta",
     hex: "#FF00FF"
 });
+
+export const pink: Color = Object.freeze({
+    name: "pink",
+    hex: "#FFC0CB"
+});
+
+export const violet: Color = Object.freeze({
+    name: "violet",
+    hex: "#EE82EE"
+});
