@@ -1,0 +1,28 @@
+{
+  "name": "cli-svg-generator",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Generate an SVG via an interactive command line interface.",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p ./tsconfig.json && mv ./build/* . && rm -rf ./build",
+    "clean": "rm -rf index.js lib"
+  },
+  "keywords": [
+    "svg",
+    "command",
+    "line",
+    "interface",
+    "cli",
+    "generator"
+  ],
+  "author": "Snap",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "tslib": "^2.6.2"
+  }
+}
