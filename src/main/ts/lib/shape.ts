@@ -3,6 +3,7 @@ import { inspect } from "util";
 export interface Text
 {
     content: string,
+    size: number,
     color: string
 }
 
@@ -39,7 +40,7 @@ export abstract class Shape
         this.#height = height;
         this.#color = color;
         this.#text = text;
-        this.#string = `${new.target.name} {width: ${this.#width}, height: ${this.#height}, color: "${this.#color}", text: {content: "${this.text.content}", color: "${this.text.color}"}}`;
+        this.#string = `${new.target.name} {width: ${this.#width}, height: ${this.#height}, color: "${this.#color}", text: {content: "${this.text.content}", size: ${this.text.size}, color: "${this.text.color}"}}`;
     }
 
     public get type(): ShapeType { return this.#type; }

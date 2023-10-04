@@ -8,9 +8,9 @@ export class Square extends Shape
     {
         super(ShapeType.SQUARE, size, size, color, text);
 
-        this.#xml = createXML({version: "1.1"})
+        this.#xml = createXML({version: "1.1"}).ele("svg", {version: "1.1", xmlns: "http://www.w3.org/2000/svg"})
             .ele("rect", {width: this.width, height: this.height})
-            .ele("text", {x: this.width / 2, y: this.height / 2, "text-anchor": "middle"}).txt(this.text.content)
+            .ele("text", {x: this.width / 2, y: this.height / 2, "font-size": this.text.size, "text-anchor": "middle"}).txt(this.text.content)
             .end({prettyPrint: true});
     }
 
