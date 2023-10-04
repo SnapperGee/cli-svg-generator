@@ -2,9 +2,9 @@ import { Shape, ShapeType, Text } from "./shape.js";
 
 export class Circle extends Shape
 {
-    public constructor(diameter: number, text: Text)
+    public constructor(diameter: number, color: string, text: Text)
     {
-        super(ShapeType.CIRCLE, diameter, diameter, text);
+        super(ShapeType.CIRCLE, diameter, diameter, color, text);
     }
 }
 

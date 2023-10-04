@@ -18,10 +18,11 @@ export abstract class Shape
     readonly #type: ShapeType;
     readonly #width: number;
     readonly #height: number;
+    readonly #color: string;
     readonly #text: Text;
     readonly #string: string;
 
-    protected constructor(type: ShapeType, width: number, height: number, text: Text)
+    protected constructor(type: ShapeType, width: number, height: number, color: string, text: Text)
     {
         if (width < 0)
         {
@@ -36,13 +37,15 @@ export abstract class Shape
         this.#type = type;
         this.#width = width;
         this.#height = height;
+        this.#color = color;
         this.#text = text;
-        this.#string = `${new.target.name} {width: ${this.#width}, height: ${this.#height}, text: "${this.text}"}`;
+        this.#string = `${new.target.name} {width: ${this.#width}, height: ${this.#height}, color: "${this.#color}", text: {content: "${this.text.content}", color: "${this.text.color}"}}`;
     }
 
     public get type(): ShapeType { return this.#type; }
     public get width(): number { return this.#width; }
     public get height(): number { return this.#height; }
+    public get color(): string { return this.#color; }
     public get text(): Text { return this.#text; }
 
     public [inspect.custom](): string { return this.#string; }
