@@ -7,7 +7,8 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -p ./tsconfig.json && mv ./build/* . && rm -rf ./build",
-    "clean": "rm -rf index.js lib"
+    "clean": "rm -rf ./index.js ./lib",
+    "prebuild": "npm run clean"
   },
   "keywords": [
     "svg",
