@@ -47,6 +47,7 @@ export abstract class Shape
     public get height(): number { return this.#height; }
     public get color(): string { return this.#color; }
     public get text(): Text { return this.#text; }
+    public abstract get xml(): string;
 
     public [inspect.custom](): string { return this.#string; }
     public toString(): string { return this.#string; }

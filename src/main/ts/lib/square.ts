@@ -10,11 +10,11 @@ export class Square extends Shape
 
         this.#xml = createXML({version: "1.1"})
             .ele("rect", {width: this.width, height: this.height})
-            .up().ele("text", {x: this.width / 2, y: this.height / 2, "text-anchor": "middle"}).txt(this.text.content)
+            .ele("text", {x: this.width / 2, y: this.height / 2, "text-anchor": "middle"}).txt(this.text.content)
             .end({prettyPrint: true});
     }
 
-    public get xml(): string { return this.#xml; }
+    public override get xml(): string { return this.#xml; }
 }
 
 export default Square;
