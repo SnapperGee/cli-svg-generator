@@ -1,3 +1,3 @@
 # CLI SVG Generator
 
-Generate an SVG logo file via an interactive command line interface.
+Generate an SVG file via an interactive command line interface.
