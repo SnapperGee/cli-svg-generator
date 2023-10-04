@@ -11,7 +11,7 @@ export class Square extends Shape
         this.#xml = createXML({version: "1.1"}).ele("svg", {version: "1.1", xmlns: "http://www.w3.org/2000/svg"})
             .ele("rect", {width: this.width, height: this.height}).up()
             .ele("text", {x: this.width / 2, y: this.height / 2, "font-size": this.text.size, "text-anchor": "middle"}).txt(this.text.content)
-            .end({prettyPrint: true});
+            .end({prettyPrint: true}).split("\n").slice(1).join("\n");
     }
 
     public override get xml(): string { return this.#xml; }
