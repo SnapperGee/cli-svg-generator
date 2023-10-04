@@ -1,5 +1,11 @@
 import { inspect } from "util";
 
+export interface Text
+{
+    content: string,
+    color: string
+}
+
 export const enum ShapeType
 {
     SQUARE = "square",
@@ -12,10 +18,10 @@ export abstract class Shape
     readonly #type: ShapeType;
     readonly #width: number;
     readonly #height: number;
-    readonly #text: string;
+    readonly #text: Text;
     readonly #string: string;
 
-    protected constructor(type: ShapeType, width: number, height: number, text: string)
+    protected constructor(type: ShapeType, width: number, height: number, text: Text)
     {
         if (width < 0)
         {
@@ -37,7 +43,7 @@ export abstract class Shape
     public get type(): ShapeType { return this.#type; }
     public get width(): number { return this.#width; }
     public get height(): number { return this.#height; }
-    public get text(): string { return this.#text; }
+    public get text(): Text { return this.#text; }
 
     public [inspect.custom](): string { return this.#string; }
     public toString(): string { return this.#string; }
