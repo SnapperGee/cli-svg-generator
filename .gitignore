@@ -4,3 +4,6 @@ node_modules
 .vscode
 .project
 .env
+Assets
+Images
+README_SPEC.md
