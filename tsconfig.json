@@ -6,7 +6,7 @@
       "esModuleInterop": true,
       "forceConsistentCasingInFileNames": true,
       "lib": ["es2021"],
-      "module": "es2020",
+      "module": "es2022",
       "moduleResolution": "node",
       "noEmitOnError": true,
       "noImplicitOverride": true,
@@ -15,6 +15,6 @@
       "rootDir": "./src/main/ts",
       "sourceMap": false,
       "strict": true,
-      "target": "es2021"
+      "target": "es2017"
     }
   }
