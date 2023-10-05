@@ -1,5 +1,8 @@
-import { Answers } from "inquirer";
 import { colorNames } from "./color.js";
+import { ShapeType } from "../shape.js";
+import { type Answers } from "inquirer";
+import { resolve as resolvePath } from "node:path";
+import { existsSync, lstat } from "node:fs";
 
 const PREFIX = ">>>";
 const SUFFIX = ":";
@@ -54,7 +57,17 @@ const textColorQuestion: Readonly<Answers> = Object.freeze({
     suffix: SUFFIX,
 });
 
-export const question: Record<string, Answers> = Object.freeze({
+const shapeQuestion: Readonly<Answers> = Object.freeze({
+    type: "list",
+    name: "shape",
+    message: "Choose SVG shape",
+    choices: () => Promise.resolve(Object.values(ShapeType)),
+    prefix: PREFIX,
+    suffix: SUFFIX,
+});
+
+export const question = Object.freeze({
+    shape: shapeQuestion,
     textContent: textContentQuestion,
     textColor: textColorQuestion
 });
