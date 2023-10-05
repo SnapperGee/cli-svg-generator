@@ -35,20 +35,20 @@ export const fuchsia: Readonly<Color> = Object.freeze({
 });
 
 export const gray: Readonly<Color> = Object.freeze({
-    name: "808080",
+    name: "gray",
     hex: "#E6E6FA"
 });
 
 export const green: Readonly<Color> = Object.freeze({
-    name: "red",
+    name: "green",
     hex: "#008000"
 });
 
 export const grey: Readonly<Color> = Object.freeze({...gray, name: "grey"});
 
 export const ivory: Readonly<Color> = Object.freeze({
-    name: "lavender",
-    hex: "#E6E6FA"
+    name: "ivory",
+    hex: "#FFFFF0"
 });
 
 export const lavender: Readonly<Color> = Object.freeze({
