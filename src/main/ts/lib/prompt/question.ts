@@ -1,11 +1,11 @@
 import { ShapeType } from "../shape.js";
-import { isNonNegativeNumber, isColor } from "./validate-input.js";
+import { isColor } from "./validate-input.js";
 import { type Answers } from "inquirer";
-import { resolve as resolvePath } from "node:path";
-import { existsSync, lstat } from "node:fs";
 
 const PREFIX = ">>>";
 const SUFFIX = ":";
+
+const toString = (arg: unknown) => typeof arg === "string" ? `"${arg}"` : arg;
 
 const textContentQuestion: Readonly<Answers> = Object.freeze({
     type: "input",
@@ -59,11 +59,38 @@ const shapeColorQuestion: Readonly<Answers> = Object.freeze({
     suffix: SUFFIX,
 });
 
+export const confirmQuestion = Object.freeze({
+    type: "confirm",
+    name: "confirm",
+    message: (answers: Record<string, any>) => {
+        const answersString = Object.entries(answers).filter(entry => entry[1].length !== 0).map(entry => `${entry[0]}: ${toString(entry[1])}`).join("\n");
+        return `\n${answersString}\n\nCreate SVG with the above properties?`;
+    },
+    prefix: "",
+    suffix: SUFFIX
+ });
+
 export const question = Object.freeze({
     textContent: textContentQuestion,
     textColor: textColorQuestion,
     shape: shapeQuestion,
-    shapeColor: shapeColorQuestion
+    shapeColor: shapeColorQuestion,
+    confirm: confirmQuestion
+});
+
+export const editAnswersQuestion = Object.freeze({
+    type: "checkbox",
+    name: "answersToEdit",
+    message: "Choose properties to edit",
+    when: (answers: Record<string, unknown>) => Promise.resolve(answers.confirm !== true),
+    choices: (answers: Record<string, unknown>) => Promise.resolve(
+        Object.entries(answers).map( (answerEntry) => ({
+            name: `${answerEntry[0]}: ${toString(answerEntry[1])}`,
+            value: answerEntry[0]
+        }))
+    ),
+    prefix: PREFIX,
+    suffix: SUFFIX
 });
 
 export const questionsArray: readonly Answers[] = Object.freeze(Object.values(question));
