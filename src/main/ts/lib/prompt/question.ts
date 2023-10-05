@@ -1,5 +1,5 @@
 import { ShapeType } from "../shape.js";
-import { isNonNegativeNumber, isValidColor } from "./validate-input.js";
+import { isNonNegativeNumber, isColor } from "./validate-input.js";
 import { type Answers } from "inquirer";
 import { resolve as resolvePath } from "node:path";
 import { existsSync, lstat } from "node:fs";
@@ -41,7 +41,7 @@ const textColorQuestion: Readonly<Answers> = Object.freeze({
         const trimmedInput = input.trim();
         resolve(trimmedInput.startsWith("#") ? trimmedInput.toUpperCase() : trimmedInput.toLowerCase());
     }),
-    validate: (input: string) => isValidColor("text", input),
+    validate: (input: string) => isColor("text", input),
     prefix: PREFIX,
     suffix: SUFFIX,
 });
@@ -55,6 +55,15 @@ const shapeQuestion: Readonly<Answers> = Object.freeze({
     suffix: SUFFIX,
 });
 
+const shapeSizeQuestion: Readonly<Answers> = Object.freeze({
+    type: "input",
+    name: "shapeSize",
+    message: "Shape size",
+    validate: (input: string) => isNonNegativeNumber(input),
+    prefix: PREFIX,
+    suffix: SUFFIX,
+});
+
 const shapeColorQuestion: Readonly<Answers> = Object.freeze({
     type: "input",
     name: "shapeColor",
@@ -63,7 +72,7 @@ const shapeColorQuestion: Readonly<Answers> = Object.freeze({
         const trimmedInput = input.trim();
         resolve(trimmedInput.startsWith("#") ? trimmedInput.toUpperCase() : trimmedInput.toLowerCase());
     }),
-    validate: (input: string) => isValidColor("shape", input),
+    validate: (input: string) => isColor("shape", input),
     prefix: PREFIX,
     suffix: SUFFIX,
 });
@@ -73,6 +82,7 @@ export const question = Object.freeze({
     textSize: textSizeQuestion,
     textColor: textColorQuestion,
     shape: shapeQuestion,
+    shapeSize: shapeSizeQuestion,
     shapeColor: shapeColorQuestion
 });
 

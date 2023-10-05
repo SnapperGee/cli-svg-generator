@@ -23,7 +23,7 @@ export const isNonNegativeNumber = async (input: string): Promise<string | boole
     return true;
 }
 
-export const isValidColor = async (valueBeingValidated: string, input: string): Promise<string | boolean> =>
+export const isColor = async (valueBeingValidated: string, input: string): Promise<string | boolean> =>
 {
     if (input.length === 0)
     {
