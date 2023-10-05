@@ -1,5 +1,11 @@
 import { questionsArray, editAnswersQuestion, confirmQuestion } from "./lib/prompt/question.js";
+import { Shape, ShapeType } from "./lib/shape.js";
+import { create300x200Square } from "./lib/square.js";
+import { create300x200Circle } from "./lib/circle.js";
+import { create300x200Triangle } from "./lib/triangle.js";
 import inquirer, { Answers } from "inquirer";
+import { resolve as resolvePath } from "node:path";
+import { writeFile } from "node:fs";
 
 let answers = await inquirer.prompt(questionsArray);
 
@@ -28,4 +34,25 @@ while(answers.confirm === false)
     answers = await inquirer.prompt(confirmQuestion, answers).catch(err => {throw err;});
 }
 
-console.log(answers);
+let shape: Shape;
+
+switch (answers.shape) {
+    case ShapeType.SQUARE:
+        shape = create300x200Square(answers.shapeColor, answers.textContent, answers.textColor);
+        break;
+    case ShapeType.CIRCLE:
+        shape = create300x200Circle(answers.shapeColor, answers.textContent, answers.textColor);
+        break;
+    case ShapeType.TRIANGLE:
+        shape = create300x200Triangle(answers.shapeColor, answers.textContent, answers.textColor);
+        break;
+    default:
+        throw new Error(`Invalid shape type: "${answers.shape}"`);
+}
+
+const outputFilePath = resolvePath("./logo.svg");
+
+writeFile(outputFilePath, shape.xml, (err) => {
+    if (err) { throw err; }
+    console.log(`Generated ${outputFilePath}`);
+});
