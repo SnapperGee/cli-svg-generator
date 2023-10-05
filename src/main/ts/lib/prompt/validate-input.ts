@@ -2,27 +2,6 @@ import { colorNames } from "./color.js";
 
 const validHexChars: readonly string[] = Object.freeze(Array.from("ABCDEFabcdef0123456789"));
 
-export const isNonNegativeNumber = async (input: string): Promise<string | boolean> => {
-    if (input.trim().length === 0)
-    {
-        return "A number is required.";
-    }
-
-    const numberInput = Number(input);
-
-    if (Number.isNaN(numberInput))
-    {
-        return "A number is required.";
-    }
-
-    if (numberInput < 0)
-    {
-        return "A non-negative number is required.";
-    }
-
-    return true;
-}
-
 export const isColor = async (valueBeingValidated: string, input: string): Promise<string | boolean> =>
 {
     if (input.length === 0)
