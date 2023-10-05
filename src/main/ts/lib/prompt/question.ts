@@ -24,7 +24,6 @@ const textContentQuestion: Readonly<Answers> = Object.freeze({
     suffix: SUFFIX,
 });
 
-// TODO: Finish filter and validator.
 const textSizeQuestion: Readonly<Answers> = Object.freeze({
     type: "input",
     name: "textSize",
