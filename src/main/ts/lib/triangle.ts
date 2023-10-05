@@ -18,4 +18,6 @@ export class Triangle extends Shape
     public override get xml(): string { return this.#xml; }
 }
 
+export const create300x200Triangle = (shapeColor: string, text: string, textColor: string): Triangle => new Triangle(300, 200, shapeColor, {content: text, size: 48, color: textColor});
+
 export default Triangle;
