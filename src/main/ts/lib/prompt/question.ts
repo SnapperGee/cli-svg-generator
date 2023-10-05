@@ -24,15 +24,6 @@ const textContentQuestion: Readonly<Answers> = Object.freeze({
     suffix: SUFFIX,
 });
 
-const textSizeQuestion: Readonly<Answers> = Object.freeze({
-    type: "input",
-    name: "textSize",
-    message: "Text size",
-    validate: (input: string) => isNonNegativeNumber(input),
-    prefix: PREFIX,
-    suffix: SUFFIX,
-});
-
 const textColorQuestion: Readonly<Answers> = Object.freeze({
     type: "input",
     name: "textColor",
@@ -55,15 +46,6 @@ const shapeQuestion: Readonly<Answers> = Object.freeze({
     suffix: SUFFIX,
 });
 
-const shapeSizeQuestion: Readonly<Answers> = Object.freeze({
-    type: "input",
-    name: "shapeSize",
-    message: "Shape size",
-    validate: (input: string) => isNonNegativeNumber(input),
-    prefix: PREFIX,
-    suffix: SUFFIX,
-});
-
 const shapeColorQuestion: Readonly<Answers> = Object.freeze({
     type: "input",
     name: "shapeColor",
@@ -79,10 +61,8 @@ const shapeColorQuestion: Readonly<Answers> = Object.freeze({
 
 export const question = Object.freeze({
     textContent: textContentQuestion,
-    textSize: textSizeQuestion,
     textColor: textColorQuestion,
     shape: shapeQuestion,
-    shapeSize: shapeSizeQuestion,
     shapeColor: shapeColorQuestion
 });
 
