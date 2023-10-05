@@ -1,5 +1,6 @@
 import { colorNames } from "./color.js";
 import { ShapeType } from "../shape.js";
+import { isNonNegativeNumber, isValidColor } from "./validate-input.js";
 import { type Answers } from "inquirer";
 import { resolve as resolvePath } from "node:path";
 import { existsSync, lstat } from "node:fs";
@@ -29,15 +30,7 @@ const textSizeQuestion: Readonly<Answers> = Object.freeze({
     type: "input",
     name: "textSize",
     message: "Text size",
-    validate: (input: number) => new Promise((resolve) =>{
-        if (Number.isNaN(input))
-        {
-            resolve("A number is required.");
-            return;
-        }
-
-        resolve(true);
-    }),
+    validate: (input: string) => isNonNegativeNumber(input),
     prefix: PREFIX,
     suffix: SUFFIX,
 });
@@ -50,27 +43,7 @@ const textColorQuestion: Readonly<Answers> = Object.freeze({
         const trimmedInput = input.trim();
         resolve(trimmedInput.startsWith("#") ? trimmedInput.toUpperCase() : trimmedInput.toLowerCase());
     }),
-    validate: (input: string) => new Promise((resolve) => {
-        if (input.length === 0)
-        {
-            resolve("A text color name or hex value is required.");
-            return;
-        }
-
-        if (input.startsWith("#") && input.length > 7)
-        {
-            resolve("Hex value cannot consist of more than 7 characters (including leading hashtag symbol).");
-            return;
-        }
-
-        if ( ! input.startsWith("#") && ! colorNames.includes(input))
-        {
-            resolve(`Unrecognized color: "${input}". Use a hex value with a leading '#' character to use a custom color.`);
-            return;
-        }
-
-        resolve(true);
-    }),
+    validate: (input: string) => isValidColor("text", input),
     prefix: PREFIX,
     suffix: SUFFIX,
 });
@@ -92,27 +65,7 @@ const shapeColorQuestion: Readonly<Answers> = Object.freeze({
         const trimmedInput = input.trim();
         resolve(trimmedInput.startsWith("#") ? trimmedInput.toUpperCase() : trimmedInput.toLowerCase());
     }),
-    validate: (input: string) => new Promise((resolve) => {
-        if (input.length === 0)
-        {
-            resolve("A shape color name or hex value is required.");
-            return;
-        }
-
-        if (input.startsWith("#") && input.length > 7)
-        {
-            resolve("Hex value cannot consist of more than 7 characters (including leading hashtag symbol).");
-            return;
-        }
-
-        if ( ! input.startsWith("#") && ! colorNames.includes(input))
-        {
-            resolve(`Unrecognized color: "${input}". Use a hex value with a leading '#' character to use a custom color.`);
-            return;
-        }
-
-        resolve(true);
-    }),
+    validate: (input: string) => isValidColor("shape", input),
     prefix: PREFIX,
     suffix: SUFFIX,
 });
