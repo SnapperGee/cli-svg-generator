@@ -7,7 +7,7 @@ export interface Text
     color: string
 }
 
-export const enum ShapeType
+export enum ShapeType
 {
     SQUARE = "square",
     CIRCLE = "circle",
