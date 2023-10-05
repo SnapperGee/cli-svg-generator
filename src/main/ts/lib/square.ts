@@ -4,13 +4,15 @@ import { create as createXML } from "xmlbuilder2";
 export class Square extends Shape
 {
     readonly #xml: string;
-    public constructor(size: number, color: string, text: Text)
+    public constructor(width: number, height: number, color: string, text: Text)
     {
-        super(ShapeType.SQUARE, size, size, color, text);
+        super(ShapeType.SQUARE, width, height, color, text);
 
-        this.#xml = createXML().ele("svg", {version: 1.1, xmlns: "http://www.w3.org/2000/svg"})
-            .ele("rect", {width: this.width, height: this.height, fill: this.color}).up()
-            .ele("text", {x: this.width / 2, y: this.height / 2, "font-size": this.text.size, "text-anchor": "middle", fill: this.text.color}).txt(this.text.content)
+        const size: number = this.width < this.height ? this.width : this.height;
+
+        this.#xml = createXML().ele("svg", {version: 1.1, width: this.width, height: this.height, xmlns: "http://www.w3.org/2000/svg"})
+            .ele("rect", {width: size, height: size, fill: this.color}).up()
+            .ele("text", {x: size / 2, y: size / 2, "font-size": this.text.size, "text-anchor": "middle", "dominant-baseline": "middle", fill: this.text.color}).txt(this.text.content)
             .end({headless: true});
     }
 
