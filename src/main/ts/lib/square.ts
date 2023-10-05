@@ -19,4 +19,6 @@ export class Square extends Shape
     public override get xml(): string { return this.#xml; }
 }
 
+export const create300x200Square = (shapeColor: string, text: string, textColor: string): Square => new Square(300, 200, shapeColor, {content: text, size: 60, color: textColor});
+
 export default Square;
