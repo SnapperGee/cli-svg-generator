@@ -6,8 +6,9 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "build": "tsc -p ./tsconfig.json && mv ./build/* . && rm -rf ./build",
+    "build": "tsc -p ./tsconfig.json && mv ./build/* .",
     "clean": "rm -rf ./index.js ./lib",
+    "postbuild": "rm -rf ./build",
     "prebuild": "npm run clean"
   },
   "keywords": [
