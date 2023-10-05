@@ -61,6 +61,11 @@ export const magenta: Readonly<Color> = Object.freeze({
     hex: "#FF00FF"
 });
 
+export const orange: Readonly<Color> = Object.freeze({
+    name: "orange",
+    hex: "#FFA500"
+});
+
 export const pink: Readonly<Color> = Object.freeze({
     name: "pink",
     hex: "#FFC0CB"
@@ -93,7 +98,7 @@ export const yellow: Readonly<Color> = Object.freeze({
 
 export const color = Object.freeze({
     aqua, black, blue, brown, cyan, fuchsia, gray, green, grey, ivory, lavender,
-    magenta, pink, purple, red, violet, white, yellow
+    magenta, orange, pink, purple, red, violet, white, yellow
 });
 
 export const colorNames: readonly string[] = Object.freeze(Object.values(color).map(color => color.name));
