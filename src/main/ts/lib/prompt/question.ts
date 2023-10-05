@@ -1,4 +1,3 @@
-import { colorNames } from "./color.js";
 import { ShapeType } from "../shape.js";
 import { isNonNegativeNumber, isValidColor } from "./validate-input.js";
 import { type Answers } from "inquirer";
