@@ -20,4 +20,6 @@ export class Circle extends Shape
     public override get xml(): string { return this.#xml; }
 }
 
+export const create300x200Circle = (shapeColor: string, text: string, textColor: string): Circle => new Circle(300, 200, shapeColor, {content: text, size: 60, color: textColor});
+
 export default Circle;
