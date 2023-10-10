@@ -7,23 +7,21 @@ const SUFFIX = ":";
 
 const toString = (arg: unknown) => typeof arg === "string" ? `"${arg}"` : arg;
 
+/**
+ * Inquirer question to set the text content of the generated SVG.
+ */
 const textContentQuestion: Readonly<Answers> = Object.freeze({
     type: "input",
     name: "textContent",
     message: "Text",
-    validate: (input: string) => new Promise((resolve) => {
-        if (input.length > 3)
-        {
-            resolve("Text must be 0 to 3 characters.");
-            return;
-        }
-
-        resolve(true);
-    }),
+    validate: (input: string) => Promise.resolve(input.length > 3 ? "Text must be 0 to 3 characters." : true),
     prefix: PREFIX,
     suffix: SUFFIX,
 });
 
+/**
+ * Inquirer question to set the text color of the generated SVG.
+ */
 const textColorQuestion: Readonly<Answers> = Object.freeze({
     type: "input",
     name: "textColor",
@@ -37,6 +35,9 @@ const textColorQuestion: Readonly<Answers> = Object.freeze({
     suffix: SUFFIX,
 });
 
+/**
+ * Inquirer question to set the shape of the generated SVG.
+ */
 const shapeQuestion: Readonly<Answers> = Object.freeze({
     type: "list",
     name: "shape",
@@ -46,6 +47,9 @@ const shapeQuestion: Readonly<Answers> = Object.freeze({
     suffix: SUFFIX,
 });
 
+/**
+ * Inquirer question to set the shape fill color of the generated SVG.
+ */
 const shapeColorQuestion: Readonly<Answers> = Object.freeze({
     type: "input",
     name: "shapeColor",
@@ -59,7 +63,10 @@ const shapeColorQuestion: Readonly<Answers> = Object.freeze({
     suffix: SUFFIX,
 });
 
-export const confirmQuestion = Object.freeze({
+/**
+ * Inquirer question to confirm properties for SVG that's going to be generated.
+ */
+export const confirmQuestion: Readonly<Answers> = Object.freeze({
     type: "confirm",
     name: "confirm",
     message: (answers: Record<string, any>) => {
@@ -70,7 +77,11 @@ export const confirmQuestion = Object.freeze({
     suffix: SUFFIX
  });
 
-export const question = Object.freeze({
+/**
+ * All Inquirer questions for getting the info needed to generate an SVG, except
+ * the {@link editAnswersQuestion} question.
+ */
+export const question: Record<"textContent" | "textColor" | "shape" | "shapeColor" | "confirm", Readonly<Answers>> = Object.freeze({
     textContent: textContentQuestion,
     textColor: textColorQuestion,
     shape: shapeQuestion,
@@ -78,7 +89,10 @@ export const question = Object.freeze({
     confirm: confirmQuestion
 });
 
-export const editAnswersQuestion = Object.freeze({
+/**
+ * Inquirer question to confirm that all other questions are correct.
+ */
+export const editAnswersQuestion: Readonly<Answers> = Object.freeze({
     type: "checkbox",
     name: "answersToEdit",
     message: "Choose properties to edit",
@@ -93,4 +107,7 @@ export const editAnswersQuestion = Object.freeze({
     suffix: SUFFIX
 });
 
+/**
+ * Array of all Inquirer questions for SVG generator prompts except for {@link editAnswersQuestion}.
+ */
 export const questionsArray: readonly Answers[] = Object.freeze(Object.values(question));
