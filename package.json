@@ -4,10 +4,10 @@
   "private": true,
   "description": "Generate an SVG via an interactive command line interface.",
   "type": "module",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "build": "tsc -p ./tsconfig.json && mv ./build/* .",
-    "clean": "rm -rf ./index.js ./lib ./logo.svg",
+    "clean": "rm -rf ./index.mjs ./lib ./logo.svg",
     "postbuild": "rm -rf ./build",
     "prebuild": "npm run clean"
   },

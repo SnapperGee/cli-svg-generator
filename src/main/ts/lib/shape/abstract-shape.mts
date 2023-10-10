@@ -1,5 +1,5 @@
-import { type Text } from "./text.js";
-import { ShapeType } from "./shape-type.js";
+import { type Text } from "./text.mjs";
+import { ShapeType } from "./shape-type.mjs";
 import { inspect } from "util";
 
 export abstract class AbstractShape

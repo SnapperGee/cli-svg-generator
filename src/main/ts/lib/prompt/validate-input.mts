@@ -2,7 +2,7 @@
  * @module validate-input
  */
 
-import { colorNames } from "./color.js";
+import { colorNames } from "./color.mjs";
 
 const validHexChars: readonly string[] = Object.freeze(Array.from("ABCDEFabcdef0123456789"));
 

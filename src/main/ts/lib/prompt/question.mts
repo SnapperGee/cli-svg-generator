@@ -2,8 +2,8 @@
  * @module question
  */
 
-import { ShapeType } from "../shape/shape-type.js";
-import { isColor } from "./validate-input.js";
+import { ShapeType } from "../shape/shape-type.mjs";
+import { isColor } from "./validate-input.mjs";
 import { type Answers } from "inquirer";
 
 const PREFIX = ">>>";

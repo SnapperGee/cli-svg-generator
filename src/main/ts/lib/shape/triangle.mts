@@ -1,6 +1,6 @@
-import { type Text } from "./text.js";
-import { ShapeType } from "./shape-type.js";
-import { AbstractShape } from "./abstract-shape.js";
+import { type Text } from "./text.mjs";
+import { ShapeType } from "./shape-type.mjs";
+import { AbstractShape } from "./abstract-shape.mjs";
 import { create as createXML } from "xmlbuilder2";
 
 export class Triangle extends AbstractShape
