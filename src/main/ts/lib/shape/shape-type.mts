@@ -1,7 +1,7 @@
 export enum ShapeType
 {
-    SQUARE = "square",
     CIRCLE = "circle",
+    SQUARE = "square",
     TRIANGLE = "triangle"
 }
 
