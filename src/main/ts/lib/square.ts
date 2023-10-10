@@ -2,13 +2,13 @@
  * @module square
  */
 
-import { Shape, ShapeType, Text } from "./shape.js";
+import { AbstractShape, ShapeType, Text } from "./abstract-shape.js";
 import { create as createXML } from "xmlbuilder2";
 
 /**
  * Class used to create an SVG containing a filled square and text.
  */
-export class Square extends Shape
+export class Square extends AbstractShape
 {
     readonly #xml: string;
 

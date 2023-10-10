@@ -14,7 +14,7 @@ export enum ShapeType
     TRIANGLE = "triangle"
 }
 
-export abstract class Shape
+export abstract class AbstractShape
 {
     readonly #type: ShapeType;
     readonly #width: number;
@@ -54,4 +54,4 @@ export abstract class Shape
     public toString(): string { return this.#string; }
 }
 
-export default Shape;
+export default AbstractShape;

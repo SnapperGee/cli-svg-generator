@@ -1,7 +1,7 @@
-import { Shape, ShapeType, Text } from "./shape.js";
+import { AbstractShape, ShapeType, Text } from "./abstract-shape.js";
 import { create as createXML } from "xmlbuilder2";
 
-export class Circle extends Shape
+export class Circle extends AbstractShape
 {
     readonly #xml: string;
 

@@ -1,5 +1,5 @@
 import { questionsArray, editAnswersQuestion, confirmQuestion } from "./lib/prompt/question.js";
-import { Shape, ShapeType } from "./lib/shape.js";
+import { AbstractShape, ShapeType } from "./lib/abstract-shape.js";
 import { create300x200Square } from "./lib/square.js";
 import { create300x200Circle } from "./lib/circle.js";
 import { create300x200Triangle } from "./lib/triangle.js";
@@ -34,7 +34,7 @@ while(answers.confirm === false)
     answers = await inquirer.prompt(confirmQuestion, answers).catch(err => {throw err;});
 }
 
-let shape: Shape;
+let shape: AbstractShape;
 
 switch (answers.shape) {
     case ShapeType.SQUARE:
