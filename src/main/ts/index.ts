@@ -1,8 +1,8 @@
 import { questionsArray, editAnswersQuestion, confirmQuestion } from "./lib/prompt/question.js";
-import { AbstractShape, ShapeType } from "./lib/abstract-shape.js";
-import { create300x200Square } from "./lib/square.js";
-import { create300x200Circle } from "./lib/circle.js";
-import { create300x200Triangle } from "./lib/triangle.js";
+import { AbstractShape, ShapeType } from "./lib/shape/abstract-shape.js";
+import { create300x200Square } from "./lib/shape/square.js";
+import { create300x200Circle } from "./lib/shape/circle.js";
+import { create300x200Triangle } from "./lib/shape/triangle.js";
 import inquirer, { Answers } from "inquirer";
 import { resolve as resolvePath } from "node:path";
 import { writeFile } from "node:fs";
