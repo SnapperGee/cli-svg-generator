@@ -1,12 +1,6 @@
+import { type Text } from "./text.js";
 import { ShapeType } from "./shape-type.js";
 import { inspect } from "util";
-
-export interface Text
-{
-    content: string,
-    size: number,
-    color: string
-}
 
 export abstract class AbstractShape
 {

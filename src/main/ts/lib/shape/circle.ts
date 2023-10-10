@@ -1,5 +1,6 @@
+import { type Text } from "./text.js";
 import { ShapeType } from "./shape-type.js";
-import { AbstractShape, Text } from "./abstract-shape.js";
+import { AbstractShape } from "./abstract-shape.js";
 import { create as createXML } from "xmlbuilder2";
 
 export class Circle extends AbstractShape
