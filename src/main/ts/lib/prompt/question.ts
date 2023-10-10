@@ -2,7 +2,7 @@
  * @module question
  */
 
-import { ShapeType } from "../shape/abstract-shape.js";
+import { ShapeType } from "../shape/shape-type.js";
 import { isColor } from "./validate-input.js";
 import { type Answers } from "inquirer";
 

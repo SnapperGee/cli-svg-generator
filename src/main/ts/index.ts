@@ -1,5 +1,6 @@
 import { questionsArray, editAnswersQuestion, confirmQuestion } from "./lib/prompt/question.js";
-import { AbstractShape, ShapeType } from "./lib/shape/abstract-shape.js";
+import { ShapeType } from "./lib/shape/shape-type.js";
+import { AbstractShape } from "./lib/shape/abstract-shape.js";
 import { create300x200Square } from "./lib/shape/square.js";
 import { create300x200Circle } from "./lib/shape/circle.js";
 import { create300x200Triangle } from "./lib/shape/triangle.js";

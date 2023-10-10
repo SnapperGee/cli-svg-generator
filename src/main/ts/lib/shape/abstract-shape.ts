@@ -1,3 +1,4 @@
+import { ShapeType } from "./shape-type.js";
 import { inspect } from "util";
 
 export interface Text
@@ -5,13 +6,6 @@ export interface Text
     content: string,
     size: number,
     color: string
-}
-
-export enum ShapeType
-{
-    SQUARE = "square",
-    CIRCLE = "circle",
-    TRIANGLE = "triangle"
 }
 
 export abstract class AbstractShape

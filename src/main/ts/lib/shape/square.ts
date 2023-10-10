@@ -2,7 +2,8 @@
  * @module square
  */
 
-import { AbstractShape, ShapeType, Text } from "./abstract-shape.js";
+import { ShapeType } from "./shape-type.js";
+import { AbstractShape, Text } from "./abstract-shape.js";
 import { create as createXML } from "xmlbuilder2";
 
 /**
