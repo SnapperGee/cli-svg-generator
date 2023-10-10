@@ -1,3 +1,7 @@
+/**
+ * @module question
+ */
+
 import { ShapeType } from "../shape.js";
 import { isColor } from "./validate-input.js";
 import { type Answers } from "inquirer";
