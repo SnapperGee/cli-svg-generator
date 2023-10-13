@@ -12,7 +12,6 @@
       "noImplicitOverride": true,
       "outDir": "./build",
       "preserveConstEnums": false,
-      "rootDir": "./src/main/ts",
       "sourceMap": false,
       "strict": true,
       "target": "es2017"
