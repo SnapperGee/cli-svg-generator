@@ -43,36 +43,45 @@ suite(`${Circle.name} class`, function testSuiteCircleClass()
     {
         let circle: Circle;
 
-        this.beforeEach("init Circle mock object", function initCircleMockObject() {
+        this.beforeEach("init Circle mock object", function initCircleMockObject()
+        {
             circle = new Circle(WIDTH, HEIGHT, COLOR, TEXT);
         });
 
-        test(`${Circle.name}.prototype.type equals ShapeType.CIRCLE`, function testCircleTypeToEqualShapeTypeCircle() {
+        test(`${Circle.name}.prototype.type equals ShapeType.CIRCLE`, function testCircleTypeToEqualShapeTypeCircle()
+        {
             assert.strictEqual(circle.type, ShapeType.CIRCLE, `${Circle.name}.prototype.type not equal to ShapeType.CIRCLE` );
         })
 
-        test(`${Circle.name}.prototype.width getter returns width number`, function testCircleWidthGetterToReturnWidthNumber() {
+        test(`${Circle.name}.prototype.width getter returns width number`, function testCircleWidthGetterToReturnWidthNumber()
+        {
             expect(circle.width).to.be.a("number").and.equal(WIDTH);
         })
 
-        test(`${Circle.name}.prototype.height getter returns height number`, function testCircleWidthGetterToReturnHeightNumber() {
+        test(`${Circle.name}.prototype.height getter returns height number`, function testCircleWidthGetterToReturnHeightNumber()
+        {
             expect(circle.height).to.be.a("number").and.equal(HEIGHT);
         })
 
-        test(`${Circle.name}.prototype.color getter returns color string`, function testCircleWidthGetterToReturnColorString() {
+        test(`${Circle.name}.prototype.color getter returns color string`, function testCircleWidthGetterToReturnColorString()
+        {
             expect(circle.color).to.be.a("string").and.equal(COLOR);
         })
 
-        test(`${Circle.name}.prototype.text getter returns text object`, function testCircleWidthGetterToReturnTextObject() {
+        test(`${Circle.name}.prototype.text getter returns text object`, function testCircleWidthGetterToReturnTextObject()
+        {
             expect(circle.text).to.be.an("object").and.equal(TEXT);
         })
 
-        test(`${Circle.name}.prototype.xml getter returns xml string`, function testCircleWidthGetterToReturnXmlString() {
+        test(`${Circle.name}.prototype.xml getter returns xml string`, function testCircleWidthGetterToReturnXmlString()
+        {
             expect(circle.xml).to.be.a("string").and.equal(XML);
         })
 
-        test(`${Circle.name}.prototype.toString() method returns toString string`, function testCircleToStringMethodReturnsToString() {
+        test(`${Circle.name}.prototype.toString() method returns toString string`, function testCircleToStringMethodReturnsToString()
+        {
             expect(circle.toString()).to.be.a("string").and.equal(toString);
         })
     });
+
 });

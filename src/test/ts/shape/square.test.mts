@@ -43,35 +43,43 @@ suite(`${Square.name} class`, function testSuiteSquareClass()
     {
         let square: Square;
 
-        this.beforeEach("init Square mock object", function initSquareMockObject() {
+        this.beforeEach("init Square mock object", function initSquareMockObject()
+        {
             square = new Square(WIDTH, HEIGHT, COLOR, TEXT);
         });
 
-        test(`${Square.name}.prototype.type equals ShapeType.SQUARE`, function testSquareTypeToEqualShapeTypeSquare() {
+        test(`${Square.name}.prototype.type equals ShapeType.SQUARE`, function testSquareTypeToEqualShapeTypeSquare()
+        {
             assert.strictEqual(square.type, ShapeType.SQUARE, `${Square.name}.prototype.type not equal to ShapeType.SQUARE` );
         })
 
-        test(`${Square.name}.prototype.width getter returns width number`, function testSquareWidthGetterToReturnWidthNumber() {
+        test(`${Square.name}.prototype.width getter returns width number`, function testSquareWidthGetterToReturnWidthNumber()
+        {
             expect(square.width).to.be.a("number").and.equal(WIDTH);
         })
 
-        test(`${Square.name}.prototype.height getter returns height number`, function testSquareWidthGetterToReturnHeightNumber() {
+        test(`${Square.name}.prototype.height getter returns height number`, function testSquareWidthGetterToReturnHeightNumber()
+        {
             expect(square.height).to.be.a("number").and.equal(HEIGHT);
         })
 
-        test(`${Square.name}.prototype.color getter returns color string`, function testSquareWidthGetterToReturnColorString() {
+        test(`${Square.name}.prototype.color getter returns color string`, function testSquareWidthGetterToReturnColorString()
+        {
             expect(square.color).to.be.a("string").and.equal(COLOR);
         })
 
-        test(`${Square.name}.prototype.text getter returns text object`, function testSquareWidthGetterToReturnTextObject() {
+        test(`${Square.name}.prototype.text getter returns text object`, function testSquareWidthGetterToReturnTextObject()
+        {
             expect(square.text).to.be.an("object").and.equal(TEXT);
         })
 
-        test(`${Square.name}.prototype.xml getter returns xml string`, function testSquareWidthGetterToReturnXmlString() {
+        test(`${Square.name}.prototype.xml getter returns xml string`, function testSquareWidthGetterToReturnXmlString()
+        {
             expect(square.xml).to.be.a("string").and.equal(XML);
         })
 
-        test(`${Square.name}.prototype.toString() method returns toString string`, function testSquareToStringMethodReturnsToString() {
+        test(`${Square.name}.prototype.toString() method returns toString string`, function testSquareToStringMethodReturnsToString()
+        {
             expect(square.toString()).to.be.a("string").and.equal(toString);
         })
     });
