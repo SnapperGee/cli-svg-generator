@@ -47,7 +47,7 @@ suite(`${Square.name} class`, function testSuiteSquareClass()
             square = new Square(WIDTH, HEIGHT, COLOR, TEXT);
         });
 
-        test(`${Square.name}.prototype.type equals ShapeType.Square`, function testSquareTypeToEqualShapeTypeSquare() {
+        test(`${Square.name}.prototype.type equals ShapeType.SQUARE`, function testSquareTypeToEqualShapeTypeSquare() {
             assert.strictEqual(square.type, ShapeType.SQUARE, `${Square.name}.prototype.type not equal to ShapeType.SQUARE` );
         })
 
