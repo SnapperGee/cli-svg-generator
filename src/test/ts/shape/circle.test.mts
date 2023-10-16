@@ -1,4 +1,5 @@
 import { ShapeType } from "../../../main/ts/lib/shape/shape-type.mjs";
+import { AbstractShape } from "../../../main/ts/lib/shape/abstract-shape.mjs";
 import { Triangle } from "../../../main/ts/lib/shape/triangle.mjs";
 import { assert, expect } from "chai";
 
@@ -13,6 +14,13 @@ const toString = `${Triangle.name} {width: ${WIDTH}, height: ${HEIGHT}, color: "
 
 suite(`${Triangle.name} class`, function testSuiteTriangleClass()
 {
+    test(`${Triangle.name} instance of ${AbstractShape.name}`, function testTriangleObjectIsInstanceOfAbstractShape()
+    {
+        const triangle = new Triangle(WIDTH, HEIGHT, COLOR, TEXT);
+
+        assert.instanceOf(triangle, AbstractShape, `${Triangle.name} not instance of ${AbstractShape.name}`);
+    });
+
     suite(`${Triangle.name} constructor`, function testSuiteTriangleConstructor()
     {
         test(`${Triangle.name} constructor throws ${RangeError.name} when passed negative width`, function testTriangleConstructorThrowsWhenPassedNegativeWidth()
