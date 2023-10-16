@@ -1,5 +1,5 @@
 import { color, colorNames } from "../../../main/ts/lib/prompt/color.mjs";
-import { assert, expect } from "chai";
+import { expect } from "chai";
 
 const _color = Object.freeze([
     Object.freeze({name: "aqua", hex: "#00FFFF"}),
