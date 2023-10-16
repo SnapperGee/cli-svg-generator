@@ -36,7 +36,7 @@ export const fuchsia: Readonly<Color> = Object.freeze({
 
 export const gray: Readonly<Color> = Object.freeze({
     name: "gray",
-    hex: "#E6E6FA"
+    hex: "#808080"
 });
 
 export const green: Readonly<Color> = Object.freeze({
