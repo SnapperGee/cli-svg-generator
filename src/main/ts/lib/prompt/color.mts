@@ -16,7 +16,7 @@ export const black: Readonly<Color> = Object.freeze({
 
 export const blue: Readonly<Color> = Object.freeze({
     name: "blue",
-    hex: "#008000"
+    hex: "#0000FF"
 });
 
 export const brown: Readonly<Color> = Object.freeze({
