@@ -1,7 +1,7 @@
 import { ShapeType } from "../../../main/ts/lib/shape/shape-type.mjs";
 import { assert, expect } from "chai";
 
-suite("ShapeType", () => {
+suite("ShapeType", function testSuiteShapeType() {
     test("ShapeType.CIRCLE property exists", function testShapeTypeShouldHavePropertyCircle() {
         expect(ShapeType).to.have.property("CIRCLE");
     });
