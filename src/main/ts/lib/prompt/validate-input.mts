@@ -25,7 +25,7 @@ export const isColor = async (typeOfValueBeingValidated: string, input: string):
 
     if (input.startsWith("#"))
     {
-        if (input.length < 4 && input.length > 7)
+        if (input.length < 4 || input.length > 7)
         {
             return `Hex value must be 4 to 7 characters (including leading hashtag symbol): "${input}" has length ${input.length}`;
         }
