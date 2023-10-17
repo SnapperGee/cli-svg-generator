@@ -70,10 +70,10 @@ is reprompted for input if an invalid text color is inputted.
 The final prompt confirms the properties of the generated SVG:
 
 ```shell
-textContent: "ABC"
-textColor: "green"
-shape: "square"
-shapeColor: "blue"
+textContent: "TRI"
+textColor: "white"
+shape: "triangle"
+shapeColor: "black"
 
 Create SVG with the above properties?: (Y/n)
 ```
@@ -98,6 +98,51 @@ values and then confirmation for the new property values will be prompted again
 until confirmation prompt is affirmatively answered.
 
 ## Package environment
+
+### Structure
+
+The source code for this package's deployable code and unit tests is located
+within the `src/main/ts` and `src/test/ts` directories respectively.
+
+<details>
+  <summary>Directory structure tree of package::</summary>
+
+```text
+.
+├── package.json
+├── package-lock.json
+├── README.md
+├── src
+│   ├── main
+│   │   └── ts
+│   │       ├── index.mts
+│   │       └── lib
+│   │           ├── prompt
+│   │           │   ├── color.mts
+│   │           │   ├── question.mts
+│   │           │   └── validate-input.mts
+│   │           └── shape
+│   │               ├── abstract-shape.mts
+│   │               ├── circle.mts
+│   │               ├── shape-type.mts
+│   │               ├── square.mts
+│   │               ├── text.mts
+│   │               └── triangle.mts
+│   └── test
+│       └── ts
+│           ├── prompt
+│           │   ├── color.test.mts
+│           │   ├── question.test.mts
+│           │   └── validate-input.test.mts
+│           └── shape
+│               ├── circle.test.mts
+│               ├── shape-type.test.mts
+│               ├── square.test.mts
+│               └── triangle.test.mts
+└── tsconfig.json
+```
+
+</details>
 
 ### Build script
 
@@ -124,3 +169,25 @@ via:
 ```txt
 npm test
 ```
+
+---
+
+### Miscellaneous package info
+
+[![ISC license][ISC license shield]][ISC license clause]
+[![GitHub][github shield]][github repo]
+[![npm][npm shield]][npm website]
+[![Mocha][mocha shield]][mocha website]
+[![NodeJS][node shield]][node website]
+![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+
+[ISC license shield]: https://img.shields.io/badge/License-ISC-blue.svg "ISC license"
+[ISC license clause]: https://opensource.org/licenses/ISC "ISC license"
+[github shield]: https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white "github"
+[github repo]: https://github.com/SnapperGee/cli-svg-generator "github"
+[npm shield]: https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white "npm"
+[npm website]: https://www.npmjs.com/ "npm"
+[node shield]: https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white "node"
+[node website]: https://nodejs.org/en/about "node"
+[mocha shield]: https://img.shields.io/badge/-mocha-%238D6748?style=for-the-badge&logo=mocha&logoColor=white "Mocha"
+[mocha website]: https://mochajs.org/ "Mocha"
