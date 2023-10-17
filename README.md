@@ -24,7 +24,7 @@ Running this package's `index.mjs` will initialize the interactive shell to
 generate an SVG:
 
 ``` shell
-node ./index.mjs
+node index.mjs
 ```
 
 This will present the first prompt:
