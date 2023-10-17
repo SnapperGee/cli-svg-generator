@@ -2,7 +2,7 @@
  * @module index
  */
 
-import { questionsArray, editAnswersQuestion, confirmQuestion } from "./lib/prompt/question.mjs";
+import { questionsArray, answersToEditQuestion, confirmQuestion } from "./lib/prompt/question.mjs";
 import { ShapeType } from "./lib/shape/shape-type.mjs";
 import { AbstractShape } from "./lib/shape/abstract-shape.mjs";
 import { create300x200Square } from "./lib/shape/square.mjs";
@@ -21,7 +21,7 @@ while(answers.confirm === false)
     delete answers.confirm;
 
     // Get array of answer names user wants to edit.
-    const answersToEdit: readonly Answers[] = await inquirer.prompt(editAnswersQuestion, answers)
+    const answersToEdit: readonly Answers[] = await inquirer.prompt(answersToEditQuestion, answers)
         .then(answersWithAnswersToEdit => answersWithAnswersToEdit.answersToEdit as readonly Answers[])
         .catch(err => {throw err;});
 

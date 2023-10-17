@@ -83,7 +83,7 @@ export const confirmQuestion: Readonly<Answers> = Object.freeze({
 
 /**
  * All Inquirer questions for getting the info needed to generate an SVG, except
- * the {@link editAnswersQuestion} question.
+ * the {@link answersToEditQuestion} question.
  */
 export const question: Record<"textContent" | "textColor" | "shape" | "shapeColor" | "confirm", Readonly<Answers>> = Object.freeze({
     textContent: textContentQuestion,
@@ -96,7 +96,7 @@ export const question: Record<"textContent" | "textColor" | "shape" | "shapeColo
 /**
  * Inquirer question to confirm that all other questions are correct.
  */
-export const editAnswersQuestion: Readonly<Answers> = Object.freeze({
+export const answersToEditQuestion: Readonly<Answers> = Object.freeze({
     type: "checkbox",
     name: "answersToEdit",
     message: "Choose properties to edit",
@@ -112,6 +112,6 @@ export const editAnswersQuestion: Readonly<Answers> = Object.freeze({
 });
 
 /**
- * Array of all Inquirer questions for SVG generator prompts except for {@link editAnswersQuestion}.
+ * Array of all Inquirer questions for SVG generator prompts except for {@link answersToEditQuestion}.
  */
 export const questionsArray: readonly Answers[] = Object.freeze(Object.values(question));
