@@ -176,6 +176,7 @@ npm test
 [![ISC license][ISC license shield]][ISC license clause]
 [![GitHub][github shield]][github repo]
 [![npm][npm shield]][npm website]
+[![TypeScript][typescript shield]][typescript website]
 [![Mocha][mocha shield]][mocha website]
 [![NodeJS][node shield]][node website]
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
@@ -186,7 +187,9 @@ npm test
 [github repo]: https://github.com/SnapperGee/cli-svg-generator "github"
 [npm shield]: https://img.shields.io/badge/NPM-%23CB3837.svg?style=for-the-badge&logo=npm&logoColor=white "npm"
 [npm website]: https://www.npmjs.com/ "npm"
-[node shield]: https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white "node"
-[node website]: https://nodejs.org/en/about "node"
+[typescript shield]: https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white "TypeScript"
+[typescript website]: https://www.typescriptlang.org/ "TypeScript"
 [mocha shield]: https://img.shields.io/badge/-mocha-%238D6748?style=for-the-badge&logo=mocha&logoColor=white "Mocha"
 [mocha website]: https://mochajs.org/ "Mocha"
+[node shield]: https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white "node"
+[node website]: https://nodejs.org/en/about "node"
