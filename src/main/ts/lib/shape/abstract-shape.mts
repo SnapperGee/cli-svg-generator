@@ -3,7 +3,7 @@ import { ShapeType } from "./shape-type.mjs";
 import { inspect } from "util";
 
 /**
- * Root parent class for created the SVG xml `string` of various logos and shapes.
+ * Class used to create an SVG containing a filled shaped and centered-ish text.
  */
 export abstract class AbstractShape
 {
