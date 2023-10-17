@@ -154,7 +154,7 @@ the generated `lib` directory contains the components used by this package's
 script.
 
 If the build output `index.mjs` and `lib` directories aren't present, they can
-be built/generated via the:
+be built/generated via:
 
 ```bash
 npm run build
