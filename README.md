@@ -163,8 +163,7 @@ npm run build
 ### Tests
 
 This package contains unit tests in the [`./src/test/ts`](./src/test/ts "Unit test source code")
-directory. Test results are outputted to shell's `stdout`. The tests can be run
-via:
+directory. Test results are outputted to `stdout`. The tests can be run via:
 
 ```txt
 npm test
