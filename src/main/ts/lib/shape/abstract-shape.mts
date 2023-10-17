@@ -1,3 +1,7 @@
+/**
+ * @module abstract-shape
+ */
+
 import { type Text } from "./text.mjs";
 import { ShapeType } from "./shape-type.mjs";
 import { inspect } from "util";
