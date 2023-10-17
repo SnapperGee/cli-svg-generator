@@ -1,3 +1,7 @@
+/**
+ * @module index
+ */
+
 import { questionsArray, editAnswersQuestion, confirmQuestion } from "./lib/prompt/question.mjs";
 import { ShapeType } from "./lib/shape/shape-type.mjs";
 import { AbstractShape } from "./lib/shape/abstract-shape.mjs";
