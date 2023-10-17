@@ -8,7 +8,9 @@ import { AbstractShape } from "./abstract-shape.mjs";
 import { create as createXML } from "xmlbuilder2";
 
 /**
- * Class used to create an SVG containing a filled square and text.
+ * Class used to create an SVG containing a filled square and text. Regardless
+ * of the set width and height, the generated SVG will contain a square path
+ * with sides equal to the smaller of the set width and height dimension.
  */
 export class Square extends AbstractShape
 {
