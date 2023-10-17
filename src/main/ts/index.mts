@@ -59,5 +59,5 @@ const outputFilePath = resolvePath("./logo.svg");
 
 writeFile(outputFilePath, shape.xml, (err) => {
     if (err) { throw err; }
-    console.log(`Generated ${outputFilePath}`);
+    console.log(`Generated '${outputFilePath}'`);
 });
