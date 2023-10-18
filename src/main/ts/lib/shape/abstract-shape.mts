@@ -69,10 +69,15 @@ export abstract class AbstractShape
     public abstract get xml(): string;
 
     /**
+     * Returns the SVG `string` of this {@link AbstractShape Shape}.
+     * @returns the SVG `string` of this {@link AbstractShape Shape}.
+     */
+    public render(): string { return this.xml; };
+
+    /**
      * Returns a `string` representation of this {@link AbstractShape Shape} object.
      * @returns a `string` representation of this {@link AbstractShape Shape} object.
      */
-
     public [inspect.custom](): string { return this.#string; }
 
     /**
