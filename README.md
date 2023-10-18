@@ -21,7 +21,9 @@ npm i cli-svg-generator
 ## Usage
 
 Running this package's `index.mjs` will initialize the interactive shell to
-generate an SVG:
+set the properties of the generates SVG. An example video demonstrating this can
+be found [HERE](https://drive.google.com/file/d/1vwW9Je782s7PEAq1PLoKiE2sjtpwIZtl/view?usp=share_link)
+or each step is highlighted below:
 
 ``` shell
 node index.mjs
